@@ -1,0 +1,12 @@
+language: c
+python:
+    - "2.6"
+compiler:
+    - gcc
+matrix:
+    - TARGETS=x86_64-softmmu
+before_install:
+    - sudo apt-get update -qq
+    - sudo apt-get install -qq debhelper python gccxml python-ctypeslib cmake
+script: "mkdir build && cd build && cmake .. && make"
+
